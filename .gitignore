@@ -22,3 +22,6 @@ Sites/
 projects/
 .emacs.d/auto-save-list/*
 *.log
+*~
+.ido.last
+.emacs-places
