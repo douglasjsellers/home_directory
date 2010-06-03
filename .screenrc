@@ -1,0 +1,10 @@
+termcapinfo xterm* ti@:te@
+hardstatus alwayslastline
+startup_message off 
+defscrollback 5000 
+shell -$SHELL 
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]' 
+
+chdir /Users/douglassellers/projects/code/ 
+screen -t ssh 0 
+screen -t development 1
