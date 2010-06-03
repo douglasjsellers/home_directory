@@ -25,3 +25,6 @@ projects/
 *~
 .ido.last
 .emacs-places
+.emacs.d/places
+.local/
+.recentf

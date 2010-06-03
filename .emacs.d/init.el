@@ -4,6 +4,15 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
+;; make it so that the copy past steff is more sane
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+
+;; make it so that when you select something and hit delete it deletes
+;; it
+(delete-selection-mode t)
+
 ;; Enable ido
 (require 'ido)
 (ido-mode t)
@@ -60,12 +69,21 @@
 ;; TODO: rinari, slime
 
 ;; You can keep system- or user-specific customizations here:
-
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el"))
 
 (if (file-exists-p system-specific-config) (load system-specific-config))
 (if (file-exists-p user-specific-config) (load user-specific-config))
 
+
+;; Make the java editing more sane
+(defun my-java-mode-hook ()
+  (c-set-style "bsd")
+  (setq c-basic-offset 4))
+(add-hook 'java-mode-hook 'my-java-mode-hook)
+
+;; Enable nicer javascript editing
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; init.el ends
