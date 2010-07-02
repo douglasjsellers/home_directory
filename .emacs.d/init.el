@@ -41,7 +41,6 @@
 ;; this must be loaded before ELPA since it bundles its own
 ;; out-of-date js stuff. TODO: fix it to use ELPA dependencies
 ;; TODO: this is causing issues with js2-mode; re-enable when fixed.
-(load "elpa-to-submit/nxhtml/autostart")
 
 ;; Load up ELPA, the package manager:
 
@@ -49,6 +48,7 @@
 (package-initialize)
 (require 'starter-kit-elpa)
 
+(set-cursor-color "orange")
 ;; Load up starter kit customizations:
 
 (require 'starter-kit-defuns)
@@ -58,7 +58,6 @@
 (require 'starter-kit-eshell)
 (require 'starter-kit-lisp)
 (require 'starter-kit-ruby)
-(require 'starter-kit-js)
 
 (regen-autoloads)
 (load custom-file 'noerror)
@@ -82,8 +81,5 @@
   (setq c-basic-offset 4))
 (add-hook 'java-mode-hook 'my-java-mode-hook)
 
-;; Enable nicer javascript editing
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; init.el ends
