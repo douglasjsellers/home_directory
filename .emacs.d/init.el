@@ -82,4 +82,7 @@
 (add-hook 'java-mode-hook 'my-java-mode-hook)
 
 
+;; set some enviornment paths
+(setenv "PATH" (concat (getenv "PATH") ":/opt/local/bin"))
+
 ;; init.el ends
