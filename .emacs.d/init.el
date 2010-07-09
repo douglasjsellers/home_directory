@@ -84,5 +84,5 @@
 
 ;; set some enviornment paths
 (setenv "PATH" (concat (getenv "PATH") ":/opt/local/bin"))
-
+(setenv "PS1" "\\[\\e[34;1m\\]\\w $ \\[\\e[0m\\] " )
 ;; init.el ends
