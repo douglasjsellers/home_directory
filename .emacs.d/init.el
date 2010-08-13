@@ -85,4 +85,9 @@
 ;; set some enviornment paths
 (setenv "PATH" (concat (getenv "PATH") ":/opt/local/bin"))
 (setenv "PS1" "\\[\\e[34;1m\\]\\w $ \\[\\e[0m\\] " )
+
+;; Enable php-mode
+(load "php-mode")
+(add-to-list 'auto-mode-alist
+     	     '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
 ;; init.el ends
