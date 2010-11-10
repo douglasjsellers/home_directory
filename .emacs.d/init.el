@@ -51,6 +51,7 @@
 (set-cursor-color "orange")
 ;; Load up starter kit customizations:
 
+
 (require 'starter-kit-defuns)
 (require 'starter-kit-bindings)
 (require 'starter-kit-misc)
@@ -89,5 +90,18 @@
 ;; Enable php-mode
 (load "php-mode")
 (add-to-list 'auto-mode-alist
-     	     '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
+     	     '("\\.php[34]?\\'\\|\\.phtml\\'\\|\\.ctp" . php-mode))
+
+;; Enable js2
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; Enable tidy
+(load "tidy")
+(autoload 'tidy-buffer "tidy" "Run Tidy HTML parser on current buffer" t)
+(autoload 'tidy-parse-config-file "tidy" "Parse the `tidy-config-file'" t)
+(autoload 'tidy-save-settings "tidy" "Save settings to `tidy-config-file'" t)
+(autoload 'tidy-build-menu  "tidy" "Install an options menu for HTML Tidy." t)
+
+
 ;; init.el ends
