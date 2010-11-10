@@ -114,5 +114,11 @@
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
+;; Add Multi-Term
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+(multi-term-keystroke-setup)
+(global-set-key (kbd "C-c t") 'multi-term-next)
+(global-set-key (kbd "C-c T") 'multi-term)
 
 ;; init.el ends
