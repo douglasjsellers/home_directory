@@ -13,6 +13,10 @@
 ;; it
 (delete-selection-mode t)
 
+;; set the indent to something reasonable
+(setq-default c-basic-offset 2)
+(setq-default tab-width 2)
+
 ;; Enable ido
 (require 'ido)
 (ido-mode t)
@@ -109,5 +113,6 @@
 (require 'coffee-mode)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
 
 ;; init.el ends
