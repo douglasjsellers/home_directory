@@ -121,4 +121,14 @@
 (global-set-key (kbd "C-c t") 'multi-term-next)
 (global-set-key (kbd "C-c T") 'multi-term)
 
+;; start emacs server so that you can use emacsclient to open new files 
+;; quickly in your one emacs session (which you start after a reboot and
+;; keep open until your next reboot)
+(server-start)
+
+;; midnight mode purges buffers which haven't been displayed in 3 days
+(require 'midnight)
+(setq midnight-mode 't)
+
+
 ;; init.el ends
