@@ -13,6 +13,10 @@
 ;; it
 (delete-selection-mode t)
 
+;; set the indent to something reasonable
+(setq-default c-basic-offset 2)
+(setq-default tab-width 2)
+
 ;; Enable ido
 (require 'ido)
 (ido-mode t)
@@ -41,7 +45,6 @@
 ;; this must be loaded before ELPA since it bundles its own
 ;; out-of-date js stuff. TODO: fix it to use ELPA dependencies
 ;; TODO: this is causing issues with js2-mode; re-enable when fixed.
-(load "elpa-to-submit/nxhtml/autostart")
 
 ;; Load up ELPA, the package manager:
 
@@ -49,7 +52,9 @@
 (package-initialize)
 (require 'starter-kit-elpa)
 
+(set-cursor-color "orange")
 ;; Load up starter kit customizations:
+
 
 (require 'starter-kit-defuns)
 (require 'starter-kit-bindings)
@@ -58,7 +63,6 @@
 (require 'starter-kit-eshell)
 (require 'starter-kit-lisp)
 (require 'starter-kit-ruby)
-(require 'starter-kit-js)
 
 (regen-autoloads)
 (load custom-file 'noerror)
@@ -82,17 +86,54 @@
   (setq c-basic-offset 4))
 (add-hook 'java-mode-hook 'my-java-mode-hook)
 
-;; Enable nicer javascript editing
+
+;; set some enviornment paths
+(setenv "PATH" (concat (getenv "PATH") ":/opt/local/bin"))
+(setenv "PS1" "\\[\\e[34;1m\\]\\w $ \\[\\e[0m\\] " )
+
+;; Enable php-mode
+(load "php-mode")
+(add-to-list 'auto-mode-alist
+     	     '("\\.php[34]?\\'\\|\\.phtml\\'\\|\\.ctp" . php-mode))
+
+;; Enable js2
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
-;; turn on coffescript mode
-(add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
-(require 'coffee-mode)
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 
 (setq tab-width 2)
 
 (require 'slim-mode)
 
+;; Enable tidy
+(load "tidy")
+(autoload 'tidy-buffer "tidy" "Run Tidy HTML parser on current buffer" t)
+(autoload 'tidy-parse-config-file "tidy" "Parse the `tidy-config-file'" t)
+(autoload 'tidy-save-settings "tidy" "Save settings to `tidy-config-file'" t)
+(autoload 'tidy-build-menu  "tidy" "Install an options menu for HTML Tidy." t)
+
+
+;; Add Coffee Script
+(add-to-list 'load-path "~/.emacs.d/coffee-mode")
+(require 'coffee-mode)
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
+;; Add Multi-Term
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+(multi-term-keystroke-setup)
+(global-set-key (kbd "C-c t") 'multi-term-next)
+(global-set-key (kbd "C-c T") 'multi-term)
+
+;; start emacs server so that you can use emacsclient to open new files 
+;; quickly in your one emacs session (which you start after a reboot and
+;; keep open until your next reboot)
+(server-start)
+
+;; midnight mode purges buffers which haven't been displayed in 3 days
+(require 'midnight)
+(setq midnight-mode 't)
+
+
 ;; init.el ends
+
