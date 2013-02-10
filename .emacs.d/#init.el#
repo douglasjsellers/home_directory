@@ -149,23 +149,6 @@
 (setq TeX-save-query nil)
 (setq TeX-PDF-mode t)
 
-;; Color themes I like
-;; Run color-theme-select to find more
-(color-theme-initialize)
-
-(color-theme-sitaramv-solaris)
-; (color-theme-robin-hood)
-; (color-theme-taming-mr-arneson)
-; (color-theme-matrix)
-; (color-theme-deep-blue)
-; (color-theme-classic)
-; (color-theme-charcoal-black)
-
-;; Set the initial size of the emacs frame
-(add-to-list 'default-frame-alist '(left . 0))
-(add-to-list 'default-frame-alist '(top . 0))
-(add-to-list 'default-frame-alist '(height . 70))
-(add-to-list 'default-frame-alist '(width . 200))
 
 ;; init.el ends
 
