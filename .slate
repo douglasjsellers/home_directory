@@ -14,7 +14,9 @@ bind right:ctrl;alt  resize -10% +0 bottom-right
 bind left:ctrl;alt   resize +10% +0 bottom-right
 bind up:ctrl;alt     resize +0   +10% bottom-right
 bind down:ctrl;alt   resize +0   -10% bottom-right
-bind 1:cmd           resize +100% +100%
+bind 1:cmd           move 0,0 screenSizeX,screenSizeY
+bind 2:cmd           move 0,0 screenSizeX/2,screenSizeY
+bind 3:cmd           move screenSizeX/2,0 screenSizeX/2,screenSizeY
 
 # Push Bindings
 bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
