@@ -161,11 +161,17 @@
 ; (color-theme-classic)
 ; (color-theme-charcoal-black)
 
-;; Set the initial size of the emacs frame
-(add-to-list 'default-frame-alist '(left . 0))
-(add-to-list 'default-frame-alist '(top . 0))
-(add-to-list 'default-frame-alist '(height . 70))
-(add-to-list 'default-frame-alist '(width . 200))
 
+;; bind some file types
+(setq auto-mode-alist
+            (append
+             ;; File name (within directory) starts with a dot.
+             '(("/\\.[^/]*\\'" . fundamental-mode)
+               ;; File name has no dot.
+               ("/[^\\./]*\\'" . fundamental-mode)
+               ;; File name ends in ‘.js’.
+               ("\\.js\\'" . javascript-mode)
+               ("\\.emblem\\'" . slim-mode))
+             auto-mode-alist))
 ;; init.el ends
 
