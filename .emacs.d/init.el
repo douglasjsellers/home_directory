@@ -67,7 +67,7 @@
 (require 'starter-kit-registers)
 (require 'starter-kit-eshell)
 (require 'starter-kit-lisp)
-(require 'starter-kit-ruby)
+;; (require 'starter-kit-ruby)
 
 (regen-autoloads)
 (load custom-file 'noerror)
