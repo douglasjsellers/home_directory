@@ -1,0 +1,26 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/douglasjsellers/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/douglasjsellers/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/douglasjsellers/.emacs.d/" (21970 19129 0 0) "vendor/" "tidy.el" "starter-kit-ruby.el" "starter-kit-registers.el" "starter-kit-misc.el" "starter-kit-lisp.el" "starter-kit-eshell.el" "starter-kit-elpa.el" "starter-kit-defuns.el" "starter-kit-bindings.el" "slim-mode.el" "places" "php-mode.el" "multi-term.el" "loaddefs.el" "js2.el" "init.el" "ido.last" "goto-last-change.el" "elpa-to-submit/" "elpa/" "custom.el" "coffee-mode/" "auto-save-list/" "add-ons/" ".emacs" "../" "./")
+
+ ("/Users/douglasjsellers/" (21970 6469 0 0) "status/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox (Personal)/" "Dropbox (AssetAvenue)/" "Downloads/" "Documents/" "Desktop/" "code/" "Applications/" ".Trash/" ".ssh/" ".slate" ".screenrc" ".npm/" ".gitignore" ".gitconfig" ".git/" ".emacs.d/" ".DS_Store" ".dropbox/" ".cups/" ".CFUserTextEncoding" ".bash_profile" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
