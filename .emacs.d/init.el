@@ -1,8 +1,9 @@
-;; Make it so that the meta key behaves itself on the mac
+;; ;; Make it so that the meta key behaves itself on the mac
 (setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
+(setq shell-command-switch "-ic")
 
 ;; make it so that the copy past steff is more sane
 (global-set-key "\C-w" 'backward-kill-word)
@@ -17,9 +18,6 @@
 ;; it
 (delete-selection-mode t)
 
-;; set the indent to something reasonable
-(setq-default c-basic-offset 2)
-(setq-default tab-width 2)
 
 ;; Enable ido
 (require 'ido)
@@ -94,6 +92,8 @@
 
 ;; set some enviornment paths
 (setenv "PATH" (concat (getenv "PATH") ":/opt/local/bin"))
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+
 (setenv "PS1" "\\[\\e[34;1m\\]\\w $ \\[\\e[0m\\] " )
 
 ;; Enable php-mode
@@ -145,14 +145,16 @@
 ;; Color themes I like
 ;; Run color-theme-select to find more
 (color-theme-initialize)
+(load-theme 'tangotango t)
+(load-theme 'afternoon t)
 
-(color-theme-sitaramv-solaris)
+; (color-theme-sitaramv-solaris)
 ; (color-theme-robin-hood)
 ; (color-theme-taming-mr-arneson)
 ; (color-theme-matrix)
 ; (color-theme-deep-blue)
 ; (color-theme-classic)
-; (color-theme-charcoal-black)
+;(color-theme-charcoal-black)
 
 
 ;; bind some file types
@@ -166,5 +168,8 @@
                ("\\.js\\'" . javascript-mode)
                ("\\.emblem\\'" . slim-mode))
              auto-mode-alist))
+(load "~/.emacs.d/fireplace/fireplace") 
+(setq org-log-done 'time)
+(delete-selection-mode 1)
 ;; init.el ends
 
