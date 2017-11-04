@@ -1,9 +1,12 @@
+;; Alias some shit
+(defalias 'rg 'ripgrep-regexp)
 ;; ;; Make it so that the meta key behaves itself on the mac
 (setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 (setq shell-command-switch "-ic")
+(setq js-indent-level 2)
 
 ;; make it so that the copy past steff is more sane
 (global-set-key "\C-w" 'backward-kill-word)
@@ -101,11 +104,10 @@
 (add-to-list 'auto-mode-alist
      	     '("\\.php[34]?\\'\\|\\.phtml\\'\\|\\.ctp" . php-mode))
 
-;; Enable js2
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+(setq-default indent-tabs-mode nil)
 (setq tab-width 2)
+(setq indent-line-function 'insert-tab)
 
 (require 'slim-mode)
 
@@ -171,5 +173,9 @@
 (load "~/.emacs.d/fireplace/fireplace") 
 (setq org-log-done 'time)
 (delete-selection-mode 1)
-;; init.el ends
 
+
+(put 'upcase-region 'disabled nil)
+(global-linum-mode 1)
+;; init.el ends
+(put 'downcase-region 'disabled nil)
